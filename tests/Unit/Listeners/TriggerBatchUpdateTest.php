@@ -10,11 +10,19 @@ use App\Listeners\TriggerBatchUpdate;
 use App\Models\UserAttributesUpdate;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Queue;
+use Illuminate\Support\Facades\Redis;
+use PHPUnit\Framework\Attributes\After;
 use Tests\TestCase;
 
 final class TriggerBatchUpdateTest extends TestCase
 {
     use RefreshDatabase;
+
+    #[After]
+    public function cleanUp()
+    {
+        Redis::flushDb();
+    }
 
     public function testBatchUpdateDispatch(): void
     {
