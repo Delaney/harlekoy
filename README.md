@@ -1,5 +1,11 @@
 ## harlekoy
 
+<p>
+    Assumptions made:
+</p>
+
+1. The 3600 individual requests are for OTHER API endpoints, and therefore are not of our concern.
+2. Only the API payload for batch updates is given, so we can only update user attributes in batches
 ---
 
 ### Getting Set Up
