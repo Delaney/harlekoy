@@ -13,7 +13,7 @@ final class UpdateUserAttributesCommandTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_example(): void
+    public function testCommand(): void
     {
         $timezones = Timezones::values();
         User::factory()->count(10)->create([
@@ -22,7 +22,7 @@ final class UpdateUserAttributesCommandTest extends TestCase
         ]);
 
         $this->artisan('user:update-attributes')
-            ->expectsOutput('Attributes updated successfully, User Count = 10')
+            ->expectsOutput('Attributes updated successfully, User Count = 10.')
             ->assertExitCode(0);
 
         $updatedUsers = User::all();
