@@ -11,10 +11,14 @@ final class UserObserver
 {
     /**
      * Handle the User "created" event.
+     *
+     * @param User $user
      */
     public function created(User $user): void
     {
-        /** Uncomment if created users can also be "registered" using the batch update */
+        /**
+         * Uncomment if created users can also be "registered" using the batch update
+         */
 
 //        UserAttributesUpdate::createUpdate(
 //            $user, [
@@ -33,7 +37,8 @@ final class UserObserver
 
         if (!empty($changedAttributes)) {
             UserAttributesUpdate::createUpdate(
-                $user, $changedAttributes
+                $user,
+                $changedAttributes
             );
         }
     }

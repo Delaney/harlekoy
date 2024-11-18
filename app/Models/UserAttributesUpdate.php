@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * UserAttributesUpdate
+ *
  * @property int $id
  * @property string $email
  * @property array $attributes
@@ -20,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
 final class UserAttributesUpdate extends Model
 {
     use HasFactory;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -52,9 +54,10 @@ final class UserAttributesUpdate extends Model
     }
 
     /**
-     * @param User $user
-     * @param array $changes
+     * Create UserAttributesUpdate
      *
+     * @param User  $user
+     * @param array $changes
      * @return UserAttributesUpdate $userAttributesUpdate
      */
     public static function createUpdate(User $user, array $changes): self
@@ -66,6 +69,8 @@ final class UserAttributesUpdate extends Model
     }
 
     /**
+     * Scope query for unprocessed updates
+     *
      * @param Builder $query
      * @return void
      */

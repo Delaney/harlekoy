@@ -17,7 +17,8 @@ final class UpdateUserAttributes extends Command
      *
      * @var string
      */
-    protected $signature = 'user:update-attributes {--ids= : IDs of users to update (1,2,3)}';
+    protected $signature
+        = 'user:update-attributes {--ids= : IDs of users to update (1,2,3)}';
 
     /**
      * The console command description.
@@ -28,6 +29,8 @@ final class UpdateUserAttributes extends Command
 
     /**
      * Execute the console command.
+     *
+     * @return void
      */
     public function handle(): void
     {

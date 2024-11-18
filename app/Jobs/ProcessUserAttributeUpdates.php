@@ -54,12 +54,14 @@ final class ProcessUserAttributeUpdates implements ShouldQueue
             $this->incrementTracker();
         } else {
             Log::error('Batch update failed.', [
-                'response' => $response->body()
+                'response' => $response->body(),
             ]);
         }
     }
 
     /**
+     * Generate payload for provider batch API
+     *
      * @param Collection<UserAttributesUpdate> $updates
      * @return array
      */

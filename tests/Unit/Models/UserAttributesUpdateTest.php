@@ -16,7 +16,7 @@ final class UserAttributesUpdateTest extends TestCase
     public function testCreateUpdateMethod()
     {
         $user = User::factory()->create([
-            'time_zone' => 'CST'
+            'time_zone' => 'CST',
         ]);
 
         $userAttributesUpdate = UserAttributesUpdate::createUpdate($user, [

@@ -24,6 +24,9 @@ final class TriggerBatchUpdate
 
     /**
      * Handle the event.
+     *
+     * @param AttributeUpdated $event
+     * @return void
      */
     public function handle(AttributeUpdated $event): void
     {

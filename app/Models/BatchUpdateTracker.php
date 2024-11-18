@@ -7,6 +7,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * BatchUpdateTracker
+ *
  * @property int $batch_updates_made
  */
 final class BatchUpdateTracker extends Model
@@ -22,7 +24,6 @@ final class BatchUpdateTracker extends Model
 
     public static function hasReachedLimit(): bool
     {
-        /** @var self $tracker */
         $tracker = self::first();
         $limit = (int) config('services.batch.request_size');
         return $tracker->batch_updates_made >= $limit;

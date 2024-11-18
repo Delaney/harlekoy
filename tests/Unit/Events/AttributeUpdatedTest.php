@@ -13,11 +13,12 @@ use Tests\TestCase;
 final class AttributeUpdatedTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     public function testEvent(): void
     {
         $userAttributesUpdate = UserAttributesUpdate::createUpdate(
-            User::factory()->create(), [
+            User::factory()->create(),
+            [
                 'time_zone' => 'CST',
             ]
         );

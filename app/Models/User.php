@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 /**
+ * User
+ *
  * @property int $id
  * @property string $first_name
  * @property string $last_name
@@ -18,7 +20,6 @@ use Illuminate\Notifications\Notifiable;
  */
 final class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -58,6 +59,8 @@ final class User extends Authenticatable
     }
 
     /**
+     * Get full name
+     *
      * @return Attribute
      */
     protected function fullName(): Attribute
