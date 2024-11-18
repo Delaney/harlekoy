@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'batch' => [
+        'requests_per_hour' => 50,
+        'request_size' => 1000,
+    ],
+
 ];
